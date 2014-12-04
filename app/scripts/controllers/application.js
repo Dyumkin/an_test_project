@@ -8,16 +8,15 @@
  * Controller of the anTestProjectApp
  */
 angular.module('anTestProjectApp')
-  .controller('ApplicationCtrl', function ($scope, USER_ROLES, AuthService) {
-        $scope.currentUser = null;
+  .controller('ApplicationCtrl', function ($scope, USER_ROLES, AuthService, $http) {
+/*        $scope.currentUser = null;
         $scope.userRoles = USER_ROLES;
         $scope.isAuthorized = AuthService.isAuthorized;
 
         $scope.setCurrentUser = function (user) {
             $scope.currentUser = user;
             $scope.sdasd = user;
-        };
-/*
+        };*/
     function createUnknownError(status) {
       return {
         status: status,
@@ -30,13 +29,20 @@ angular.module('anTestProjectApp')
     $scope.loading = true;
 
     // Get awesome things list
-    $http({method: 'GET', url: '/api/features'}).
+    //$http.defaults.headers.common.Authorization = 'Bearer YER7L_';
+    $http({
+      method: 'GET',
+      url: 'http://apitestyii2.localhost/v1/blog'/*,
+      headers: {
+        'Www-Authenticate': 'Bearer YER7L_'
+      }*/
+    }).
 
       success(function (data) {
         $scope.loading = false;
         $scope.awesomeThings = data;
 
-        // Get description of each thing
+/*        // Get description of each thing
         $scope.awesomeThings.forEach(function (thing) {
           thing.loading = true;
 
@@ -49,12 +55,11 @@ angular.module('anTestProjectApp')
               thing.loading = false;
               thing.error = data && data.description ? data : createUnknownError(status);
             });
-        });
+        });*/
       }).
 
       error(function (data, status) {
         $scope.loading = false;
-        $scope.error = data && data.description ? data : createUnknownError(status);
+        $scope.error = data && data.message ? data : createUnknownError(status);
       });
-*/
   });

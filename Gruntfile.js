@@ -78,16 +78,16 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= yeoman.app %>/api/{,{config,src,tests}/**/}/*',
+          //'<%= yeoman.app %>/api/{,{config,src,tests}/**/}/*',
           '<%= yeoman.app %>/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
-      },
+      }/*,
       phpTest: {
-        files: ['<%= yeoman.app %>/api/{,{config,src,tests}/**/}/*'],
+        files: ['<%= yeoman.app %>/api/{,{config,src,tests}*//**//*}*//*'],
         tasks: ['shell:phpTest']
-      }
+      }*/
     },
 
     // The actual grunt server settings
@@ -146,7 +146,7 @@ module.exports = function (grunt) {
     },
 
     // PHP built-in server
-    php: {
+/*    php: {
       options: {
         port: 8000,
         // Change this to '0.0.0.0' to access the server from outside.
@@ -163,7 +163,7 @@ module.exports = function (grunt) {
           base: '<%= yeoman.dist %>/api',
         }
       }
-    },
+    },*/
 
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
@@ -395,7 +395,7 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
-            'api/**',
+            //'api/**',
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
@@ -443,13 +443,13 @@ module.exports = function (grunt) {
         stdout: true,
         stderr: true,
         failOnError: true
-      },
+      }/*,
       phpTest: {
         command: 'make --directory <%= yeoman.app %>/api test'
       },
       phpUpdate: {
         command: 'make --directory <%= yeoman.app %>/api update'
-      }
+      }*/
     },
 
     // Test settings
@@ -466,8 +466,8 @@ module.exports = function (grunt) {
     if (target === 'dist') {
       return grunt.task.run([
         'build',
-        'configureProxies',
-        'php:dist',
+        //'configureProxies',
+        //'php:dist',
         'connect:dist:keepalive'
       ]);
     }
@@ -477,8 +477,8 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'autoprefixer',
-      'configureProxies',
-      'php:server',
+      //'configureProxies',
+      //'php:server',
       'connect:livereload',
       'watch'
     ]);

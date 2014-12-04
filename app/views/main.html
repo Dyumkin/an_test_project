@@ -23,13 +23,12 @@
   </div>
 
   <div ng-if="error" class="alert alert-danger">
-    <strong>{{error.statusText}}</strong>
+    <strong>{{error.name}}</strong>
     <hr>
-    <p>{{error.description}}</p>
+    <p>{{error.message}}</p>
   </div>
 
 </div>
 <div ng-if="currentUser">Welcome, {{ currentUser.name }}</div>
 
 <div ng-if="isAuthorized(userRoles.admin)">You're admin.</div>
-        

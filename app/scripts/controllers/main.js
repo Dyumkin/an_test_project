@@ -22,7 +22,7 @@ angular.module('anTestProjectApp')
     $scope.loading = true;
 
     // Get awesome things list
-    $http({method: 'GET', url: '/api/features'}).
+/*    $http({method: 'GET', url: '/api/features'}).
 
       success(function (data) {
         $scope.loading = false;
@@ -47,5 +47,5 @@ angular.module('anTestProjectApp')
       error(function (data, status) {
         $scope.loading = false;
         $scope.error = data && data.description ? data : createUnknownError(status);
-      });
+      });*/
   });
