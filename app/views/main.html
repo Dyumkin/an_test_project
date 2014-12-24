@@ -1,3 +1,4 @@
+<div login-dialog ng-if="!isLoginPage"></div>
 <div class="jumbotron">
   <h1>'Allo, 'Allo!</h1>
   <p class="lead">
@@ -29,6 +30,6 @@
   </div>
 
 </div>
-<div ng-if="currentUser">Welcome, {{ currentUser.name }}</div>
+<div ng-if="currentUser">Welcome, {{ currentUser.username }}</div>
 
-<div ng-if="isAuthorized(userRoles.admin)">You're admin.</div>
+<div ng-if="isAuthorized(userRoles.user)">You're USER!!!!</div>

@@ -9,14 +9,15 @@
  */
 angular.module('anTestProjectApp')
   .controller('ApplicationCtrl', function ($scope, USER_ROLES, AuthService, $http) {
-/*        $scope.currentUser = null;
+        $scope.currentUser = null;
         $scope.userRoles = USER_ROLES;
         $scope.isAuthorized = AuthService.isAuthorized;
+        $scope.isLoginPage = false;
 
         $scope.setCurrentUser = function (user) {
             $scope.currentUser = user;
-            $scope.sdasd = user;
-        };*/
+        };
+
     function createUnknownError(status) {
       return {
         status: status,

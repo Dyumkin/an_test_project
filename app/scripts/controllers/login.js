@@ -24,6 +24,10 @@ angular.module('anTestProjectApp')
             });
         };
 
+    $scope.logout = function () {
+      AuthService.logout();
+    };
+
 
     /*function createUnknownError(status) {
       return {

@@ -26,7 +26,8 @@
           <li class="active"><a ng-href="#">Home</a></li>
           <li><a ng-href="#/about">About</a></li>
           <li><a ng-href="#">Contact</a></li>
-            <li><a ng-href="#/login">Login</a></li>
+            <li ng-if="!currentUser"><a ng-href="#/login">Login</a></li>
+             <li ng-if="currentUser"><a ng-href="">Logout</a></li>
         </ul>
         <h3 class="text-muted">anTestProject</h3>
       </div>
@@ -37,7 +38,6 @@
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
       </div>
     </div>
-
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -78,6 +78,9 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -91,6 +94,9 @@
         <script src="scripts/services/authservice.js"></script>
         <script src="scripts/services/session.js"></script>
         <script src="scripts/controllers/application.js"></script>
+        <script src="scripts/services/authinterceptor.js"></script>
+        <script src="scripts/directive/formAutofillFix.js"></script>
+        <script src="scripts/directive/logindialog.js"></script>
         <!-- endbuild -->
 </body>
 </html>
