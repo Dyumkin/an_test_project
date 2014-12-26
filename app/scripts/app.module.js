@@ -19,7 +19,26 @@ angular
     'restangular',
     'ui.router'
   ])
-  .config(function ($routeProvider, USER_ROLES) {
+  .run(runBlock);
+
+runBlock.$inject = ['$rootScope', 'AUTH_EVENTS', 'AuthService'];
+
+function runBlock ($rootScope, AUTH_EVENTS, AuthService) {
+    $rootScope.$on('$routeChangeStart ', function (event, next) {
+      var authorizedRoles = next.data.authorizedRoles;
+      if (!AuthService.isAuthorized(authorizedRoles)) {
+        event.preventDefault();
+        if (AuthService.isAuthenticated()) {
+          // user is not allowed
+          $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
+        } else {
+          // user is not logged in
+          $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
+        }
+      }
+    });
+}
+  /*.config(function ($routeProvider, USER_ROLES) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -43,7 +62,7 @@ angular
   .config(function(RestangularProvider) {
     RestangularProvider.setBaseUrl('http://apitestyii2.localhost/');
   })
-/*  .config(function ($stateProvider, USER_ROLES) {
+*//*  .config(function ($stateProvider, USER_ROLES) {
     $stateProvider.state('about', {
       url: '/about',
       templateUrl: 'views/about.html',
@@ -51,7 +70,7 @@ angular
         authorizedRoles: [USER_ROLES.admin, USER_ROLES.user]
       }
     });
-  })*/
+  })*//*
   .config(function ($httpProvider) {
     $httpProvider.interceptors.push([
       '$injector',
@@ -75,3 +94,4 @@ angular
       }
     });
   });
+*/

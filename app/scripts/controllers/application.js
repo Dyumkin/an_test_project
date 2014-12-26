@@ -7,7 +7,8 @@
  * # ApplicationCtrl
  * Controller of the anTestProjectApp
  */
-angular.module('anTestProjectApp')
+angular
+  .module('anTestProjectApp')
   .controller('ApplicationCtrl', function ($scope, USER_ROLES, AuthService, $http) {
         $scope.currentUser = null;
         $scope.userRoles = USER_ROLES;

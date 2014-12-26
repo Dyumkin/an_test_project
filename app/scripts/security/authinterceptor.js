@@ -2,8 +2,6 @@
  * Created by y.dyumkin on 24.12.2014.
  */
 
-'use strict';
-
 /**
  * @ngdoc service
  * @name anTestProjectApp.AuthInterceptor
@@ -11,9 +9,18 @@
  * # AuthInterceptor
  * Factory in the anTestProjectApp.
  */
-angular.module('anTestProjectApp')
-  .factory('AuthInterceptor', function ($rootScope, $q,
-                                        AUTH_EVENTS) {
+
+(function () {
+  'use strict';
+
+  angular
+    .module('anTestProjectApp')
+    .factory('authInterceptor', authInterceptor);
+
+  authInterceptor.$inject = ['$rootScope', '$q', 'AUTH_EVENTS'];
+
+  function authInterceptor($rootScope, $q, AUTH_EVENTS) {
+
     return {
       responseError: function (response) {
         $rootScope.$broadcast({
@@ -25,4 +32,7 @@ angular.module('anTestProjectApp')
         return $q.reject(response);
       }
     };
-  });
+
+  }
+
+})();

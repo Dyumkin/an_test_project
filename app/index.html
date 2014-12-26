@@ -85,18 +85,17 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
+        <script src="scripts/app.module.js"></script>
+        <script src="scripts/app.config.js"></script>
+        <script src="scripts/app.routes.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/login.js"></script>
-        <script src="scripts/services/auth_events.js"></script>
-        <script src="scripts/services/user_roles.js"></script>
+        <script src="scripts/auth/login.js"></script>
+        <script src="scripts/core/constants.js"></script>
         <script src="scripts/services/authservice.js"></script>
         <script src="scripts/services/session.js"></script>
         <script src="scripts/controllers/application.js"></script>
         <script src="scripts/services/authinterceptor.js"></script>
-        <script src="scripts/directive/formAutofillFix.js"></script>
-        <script src="scripts/directive/logindialog.js"></script>
         <!-- endbuild -->
 </body>
 </html>

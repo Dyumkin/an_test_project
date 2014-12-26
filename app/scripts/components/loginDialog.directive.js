@@ -24,7 +24,7 @@ angular.module('anTestProjectApp')
 
       scope.visible = false;
       scope.$on(AUTH_EVENTS.notAuthenticated, showDialog);
-      scope.$on(AUTH_EVENTS.sessionTimeout, showDialog)
+      scope.$on(AUTH_EVENTS.sessionTimeout, showDialog);
     }
   };
 });
