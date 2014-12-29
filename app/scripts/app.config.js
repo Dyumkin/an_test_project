@@ -26,7 +26,7 @@ function configure(RestangularProvider, $httpProvider)
   $httpProvider.interceptors.push([
     '$injector',
     function ($injector) {
-      return $injector.get('AuthInterceptor');
+      return $injector.get('authInterceptor');
     }
   ]);
 }

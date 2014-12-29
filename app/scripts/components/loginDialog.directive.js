@@ -12,11 +12,16 @@
  */
 
 
-angular.module('anTestProjectApp')
-.directive('loginDialog', function (AUTH_EVENTS) {
+angular
+  .module('anTestProjectApp')
+  .directive('loginDialog', loginDialog);
+
+loginDialog.$inject = ['AUTH_EVENTS'];
+
+function loginDialog(AUTH_EVENTS) {
   return {
     restrict: 'A',
-    template: '<div ng-if="visible" ng-include="\'views/login-form.html\'">',
+    template: '<div ng-if="visible" ng-include="\'scripts/security/login-form.html\'">',
     link: function (scope) {
       var showDialog = function () {
         scope.visible = true;
@@ -27,4 +32,4 @@ angular.module('anTestProjectApp')
       scope.$on(AUTH_EVENTS.sessionTimeout, showDialog);
     }
   };
-});
+}

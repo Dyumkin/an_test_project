@@ -16,19 +16,19 @@ angular.module('anTestProjectApp')
   .config(function ($routeProvider, USER_ROLES) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'scripts/blog/main.html',
+        controller: 'MainController'
       })
       .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
+        templateUrl: 'scripts/blog/about.html',
+        controller: 'AboutController',
         data: {
           authorizedRoles: [USER_ROLES.admin, USER_ROLES.user]
         }
       })
       .when('/login', {
-        templateUrl: 'auth/login.html',
-        controller: 'LoginCtrl'
+        templateUrl: 'scripts/security/login.html',
+        controller: 'LoginController'
       })
       .otherwise({
         redirectTo: '/'

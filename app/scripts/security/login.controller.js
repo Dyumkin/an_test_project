@@ -9,11 +9,11 @@
  */
 angular
   .module('anTestProjectApp')
-  .controller('LoginCtrl', LoginController);
+  .controller('LoginController', LoginController);
 
-LoginController.$inject = ['$scope', '$rootScope', 'AUTH_EVENTS', 'AuthService'];
+LoginController.$inject = ['$scope', '$rootScope', 'AUTH_EVENTS', 'authService'];
 
-function LoginController($scope, $rootScope, AUTH_EVENTS, AuthService) {
+function LoginController($scope, $rootScope, AUTH_EVENTS, authService) {
 
   $scope.credentials = {
     username: '',
@@ -21,7 +21,7 @@ function LoginController($scope, $rootScope, AUTH_EVENTS, AuthService) {
   };
 
   $scope.login = function (credentials) {
-    AuthService.login(credentials).then(function (user) {
+    authService.login(credentials).then(function (user) {
       $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
       $scope.setCurrentUser(user);
     }, function () {
@@ -30,9 +30,9 @@ function LoginController($scope, $rootScope, AUTH_EVENTS, AuthService) {
   };
 
   $scope.logout = function () {
-    AuthService.logout();
+    authService.logout();
   };
-
+//fgdfg
 
   /*function createUnknownError(status) {
    return {

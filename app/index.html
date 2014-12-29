@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="anTestProjectApp" ng-controller="ApplicationCtrl">
+  <body ng-app="anTestProjectApp" ng-controller="ApplicationController">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -88,14 +88,15 @@
         <script src="scripts/app.module.js"></script>
         <script src="scripts/app.config.js"></script>
         <script src="scripts/app.routes.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/auth/login.js"></script>
         <script src="scripts/core/constants.js"></script>
-        <script src="scripts/services/authservice.js"></script>
-        <script src="scripts/services/session.js"></script>
-        <script src="scripts/controllers/application.js"></script>
-        <script src="scripts/services/authinterceptor.js"></script>
+        <script src="scripts/core/application.controller.js"></script>
+        <script src="scripts/services/session.service.js"></script>
+        <script src="scripts/components/formAutofillFix.directive.js"></script>
+        <script src="scripts/components/loginDialog.directive.js"></script>
+        <script src="scripts/security/authService.js"></script>
+        <script src="scripts/security/login.controller.js"></script>
+        <script src="scripts/security/authInterceptor.js"></script>
+        <script src="scripts/blog/main.controller.js"></script>
+        <script src="scripts/blog/about.controller.js"></script>
         <!-- endbuild -->
-</body>
-</html>
+<

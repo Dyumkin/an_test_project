@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: AuthService', function () {
+describe('Service: authService', function () {
 
   // load the service's module
   beforeEach(module('anTestProjectApp'));
 
   // instantiate service
-  var AuthService;
+  var authService;
   beforeEach(inject(function (_AuthService_) {
-    AuthService = _AuthService_;
+    authService = _AuthService_;
   }));
 
   it('should do something', function () {
-    expect(!!AuthService).toBe(true);
+    expect(!!authService).toBe(true);
   });
 
 });

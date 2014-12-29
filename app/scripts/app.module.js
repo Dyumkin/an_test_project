@@ -21,14 +21,14 @@ angular
   ])
   .run(runBlock);
 
-runBlock.$inject = ['$rootScope', 'AUTH_EVENTS', 'AuthService'];
+runBlock.$inject = ['$rootScope', 'AUTH_EVENTS', 'authService'];
 
-function runBlock ($rootScope, AUTH_EVENTS, AuthService) {
+function runBlock ($rootScope, AUTH_EVENTS, authService) {
     $rootScope.$on('$routeChangeStart ', function (event, next) {
       var authorizedRoles = next.data.authorizedRoles;
-      if (!AuthService.isAuthorized(authorizedRoles)) {
+      if (!authService.isAuthorized(authorizedRoles)) {
         event.preventDefault();
-        if (AuthService.isAuthenticated()) {
+        if (authService.isAuthenticated()) {
           // user is not allowed
           $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
         } else {
@@ -75,7 +75,7 @@ function runBlock ($rootScope, AUTH_EVENTS, AuthService) {
     $httpProvider.interceptors.push([
       '$injector',
       function ($injector) {
-        return $injector.get('AuthInterceptor');
+        return $injector.get('authInterceptor');
       }
     ]);
   })

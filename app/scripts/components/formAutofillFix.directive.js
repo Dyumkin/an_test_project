@@ -13,8 +13,13 @@
  */
 
 
-angular.module('anTestProjectApp')
-.directive('formAutofillFix', function ($timeout) {
+angular
+  .module('anTestProjectApp')
+  .directive('formAutofillFix', formAutofillFix);
+
+formAutofillFix.$inject = ['$timeout'];
+
+function formAutofillFix($timeout) {
   return function (scope, element, attrs) {
     element.prop('method', 'post');
     if (attrs.ngSubmit) {
@@ -33,4 +38,4 @@ angular.module('anTestProjectApp')
       });
     }
   };
-});
+}
