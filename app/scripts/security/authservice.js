@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc service
- * @name anTestProjectApp.AuthService
+ * @name anTestProjectApp.authService
  * @description
- * # AuthService
+ * # authService
  * Factory in the anTestProjectApp.
  */
 angular
@@ -13,7 +13,7 @@ angular
 
 authService.$inject = ['$cookies', '$http', 'Restangular', 'Session'];
 
-function authService($cookies, Restangular, $http, Session) {
+function authService($cookies, $http, Restangular, Session) {
 
   var service = {
     login: login,

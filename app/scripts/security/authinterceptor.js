@@ -4,9 +4,9 @@
 
 /**
  * @ngdoc service
- * @name anTestProjectApp.AuthInterceptor
+ * @name anTestProjectApp.authInterceptor
  * @description
- * # AuthInterceptor
+ * # authInterceptor
  * Factory in the anTestProjectApp.
  */
 
