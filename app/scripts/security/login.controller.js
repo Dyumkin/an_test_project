@@ -19,19 +19,22 @@ function LoginController($scope, $rootScope, AUTH_EVENTS, authService) {
     username: '',
     password: ''
   };
+  $scope.login = login;
+  $scope.logout = logout;
 
-  $scope.login = function (credentials) {
+
+  function login (credentials) {
     authService.login(credentials).then(function (user) {
       $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
       $scope.setCurrentUser(user);
     }, function () {
       $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
     });
-  };
+  }
 
-  $scope.logout = function () {
+  function logout () {
     authService.logout();
-  };
+  }
 //fgdfg
 
   /*function createUnknownError(status) {

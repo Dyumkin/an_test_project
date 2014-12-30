@@ -26,31 +26,18 @@ function MainController($scope, $http) {
   $scope.awesomeThings = [];
   $scope.loading = true;
 
-  // Get awesome things list
-  /*    $http({method: 'GET', url: '/api/features'}).
+  $http({
+    method: 'GET',
+    url: 'http://apitestyii2.localhost/v1/blog'
+  }).
 
-   success(function (data) {
-   $scope.loading = false;
-   $scope.awesomeThings = data;
+    success(function (data) {
+      $scope.loading = false;
+      $scope.awesomeThings = data;
+    }).
 
-   // Get description of each thing
-   $scope.awesomeThings.forEach(function (thing) {
-   thing.loading = true;
-
-   $http({method: 'GET', url: thing.href}).
-   success(function (data) {
-   thing.loading = false;
-   thing.description = data.description;
-   }).
-   error(function (data, status) {
-   thing.loading = false;
-   thing.error = data && data.description ? data : createUnknownError(status);
-   });
-   });
-   }).
-
-   error(function (data, status) {
-   $scope.loading = false;
-   $scope.error = data && data.description ? data : createUnknownError(status);
-   });*/
+    error(function (data, status) {
+      $scope.loading = false;
+      $scope.error = data && data.message ? data : createUnknownError(status);
+    });
 }

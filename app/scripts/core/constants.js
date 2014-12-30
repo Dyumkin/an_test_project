@@ -1,33 +1,20 @@
 /**
  * Created by y.dyumkin on 26.12.2014.
  */
-(function() {
-  'use strict';
 
   angular
     .module('anTestProjectApp')
-    .constant('AUTH_EVENTS', authEvents)
-    .constant('USER_ROLES', userRoles);
-
-  function authEvents()
-  {
-    return {
+    .constant('AUTH_EVENTS', {
       loginSuccess: 'auth-login-success',
       loginFailed: 'auth-login-failed',
       logoutSuccess: 'auth-logout-success',
       sessionTimeout: 'auth-session-timeout',
       notAuthenticated: 'auth-not-authenticated',
       notAuthorized: 'auth-not-authorized'
-    };
-  }
-
-  function userRoles()
-  {
-    return{
+    })
+    .constant('USER_ROLES', {
       all: '*',
       admin: 'ROLE_ADMIN',
       user: 'ROLE_USER',
-      guest: 'guest'
-    };
-  }
-})();
+      guest: 'guest'});
+
