@@ -47,7 +47,7 @@ function authService($cookies, $http, Restangular, Session) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    return Restangular.all('v1/auth/login').post({access_token: token})
+    return Restangular.all('auth/login').post({access_token: token})
       .then(function (response) {
         Session.create(getRandomInt(1, 10000), response.user.id, response.user.role);
         $cookies.accessToken = token;

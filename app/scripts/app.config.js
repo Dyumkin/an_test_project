@@ -21,7 +21,7 @@ configure.$inject =
 
 function configure(RestangularProvider, $httpProvider)
 {
-  RestangularProvider.setBaseUrl('http://apitestyii2.localhost/');
+  RestangularProvider.setBaseUrl('http://apitestyii2.localhost/v1/');
 
   $httpProvider.interceptors.push([
     '$injector',

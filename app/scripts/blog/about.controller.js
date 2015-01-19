@@ -23,7 +23,7 @@ function AboutController($scope, $http) {
   }*/
 
   $scope.awesomeThings = [];
-  $scope.loading = true;
+  //$scope.loading = true;
 
   // Get awesome things list
 /*  $http({method: 'GET', url: '/api/features'}).

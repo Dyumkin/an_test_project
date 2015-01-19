@@ -17,7 +17,8 @@ angular.module('anTestProjectApp')
     $routeProvider
       .when('/', {
         templateUrl: 'scripts/blog/main.html',
-        controller: 'MainController'
+        controller: 'PostsController',
+        controlerAs: 'vm'
       })
       .when('/about', {
         templateUrl: 'scripts/blog/about.html',
