@@ -18,23 +18,40 @@ postService.$inject = ['Restangular'];
 
 function postService(Restangular)
 {
-  return {
-    getPosts: getPosts
+  var service = {
+    getPosts: getPosts,
+    getPostById: getPostById
   };
+
+  return service;
+
+  /////////////////
 
   function getPosts(){
     return Restangular.all('blog').getList()
       .then(getPostsComplete, getPostsFailed);
 
 
-    function getPostsComplete(blogs) {
-        return blogs;
+    function getPostsComplete(posts) {
+        return posts;
     }
 
     function getPostsFailed(response) {
         return response;
     }
 
+  }
 
+  function getPostById(id){
+    return Restangular.one('blog', id)
+      .then(getPostComplete, getPostFailed);
+
+    function getPostComplete(post){
+      return post;
+    }
+
+    function getPostFailed(response){
+      return response;
+    }
   }
 }

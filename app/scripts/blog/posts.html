@@ -11,14 +11,14 @@
 
   <p ng-if="vm.loading">Loading...</p>
 
-  <div ng-repeat="thing in vm.posts">
-    <h4>{{thing.alias}}</h4>
-    <p ng-if="thing.created_at">{{thing.created_at}}</p>
-    <p ng-if="thing.loading">Loading...</p>
-    <div ng-if="thing.error" class="alert alert-danger">
-      <strong>{{thing.error.statusText}}</strong>
+  <div ng-repeat="post in vm.posts">
+    <h4>{{post.alias}}</h4>
+    <a ng-if="post.created_at" ng-href="#/readPost/{{post.id}}">{{post.created_at}}</a>
+    <p ng-if="post.loading">Loading...</p>
+    <div ng-if="post.error" class="alert alert-danger">
+      <strong>{{post.error.statusText}}</strong>
       <hr>
-      <p>{{thing.error.description}}</p>
+      <p>{{post.error.description}}</p>
     </div>
   </div>
 

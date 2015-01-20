@@ -16,7 +16,7 @@ angular.module('anTestProjectApp')
   .config(function ($routeProvider, USER_ROLES) {
     $routeProvider
       .when('/', {
-        templateUrl: 'scripts/blog/main.html',
+        templateUrl: 'scripts/blog/posts.html',
         controller: 'PostsController',
         controllerAs: 'vm'
       })
@@ -30,6 +30,11 @@ angular.module('anTestProjectApp')
       .when('/login', {
         templateUrl: 'scripts/security/login.html',
         controller: 'LoginController'
+      }).
+      when('/readPost/:id', {
+        templateUrl: 'scripts/blog/post-detail.html',
+        controller: 'PostDetailController',
+        controllerAs: 'vm'
       })
       .otherwise({
         redirectTo: '/'
