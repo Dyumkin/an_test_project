@@ -12,7 +12,7 @@
  */
 angular
   .module('anTestProjectApp')
-  .factory('authService', postService);
+  .factory('postService', postService);
 
 postService.$inject = ['Restangular'];
 

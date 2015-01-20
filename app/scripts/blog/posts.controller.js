@@ -22,14 +22,6 @@ function PostsController(postService) {
   activate();
 
 
-  function createUnknownError(status) {
-    return {
-      status: status,
-      statusText: 'Internal Server Error',
-      description: 'No details available'
-    };
-  }
-
   function activate(){
     return getPosts().then(function() {
       vm.loading = false;
@@ -43,6 +35,14 @@ function PostsController(postService) {
         vm.posts = data;
         return vm.posts;
       });
+  }
+
+  function createUnknownError(status) {
+    return {
+      status: status,
+      statusText: 'Internal Server Error',
+      description: 'No details available'
+    };
   }
 
 /*  $http({

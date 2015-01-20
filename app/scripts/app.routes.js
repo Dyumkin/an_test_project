@@ -18,7 +18,7 @@ angular.module('anTestProjectApp')
       .when('/', {
         templateUrl: 'scripts/blog/main.html',
         controller: 'PostsController',
-        controlerAs: 'vm'
+        controllerAs: 'vm'
       })
       .when('/about', {
         templateUrl: 'scripts/blog/about.html',
