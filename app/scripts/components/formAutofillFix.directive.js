@@ -12,7 +12,7 @@
  * Constant in the anTestProjectApp.
  */
 
-
+(function () {
 angular
   .module('anTestProjectApp')
   .directive('formAutofillFix', formAutofillFix);
@@ -39,3 +39,4 @@ function formAutofillFix($timeout) {
     }
   };
 }
+})();

@@ -12,6 +12,7 @@
  *
  * Main config of the application.
  */
+(function () {
 angular
   .module('anTestProjectApp')
   .config(configure);
@@ -30,4 +31,5 @@ function configure(RestangularProvider, $httpProvider)
     }
   ]);
 }
+})();
 

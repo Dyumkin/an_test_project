@@ -7,6 +7,7 @@
  * # ApplicationCtrl
  * Controller of the anTestProjectApp
  */
+(function () {
 angular
   .module('anTestProjectApp')
   .controller('ApplicationController', ApplicationController);
@@ -25,3 +26,4 @@ function ApplicationController($scope, USER_ROLES, authService) {
   }
 
 }
+})();

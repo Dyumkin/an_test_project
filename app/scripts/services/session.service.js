@@ -7,6 +7,7 @@
  * # Session
  * Service in the anTestProjectApp.
  */
+(function () {
 angular
   .module('anTestProjectApp')
   .service('Session', Session);
@@ -24,3 +25,4 @@ function Session() {
   };
   return this;
 }
+})();

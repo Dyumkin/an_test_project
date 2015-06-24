@@ -7,6 +7,7 @@
  * # authService
  * Factory in the anTestProjectApp.
  */
+(function () {
 angular
   .module('anTestProjectApp')
   .factory('authService', authService);
@@ -76,3 +77,4 @@ function authService($cookies, $http, Restangular, Session) {
   }
 
 }
+})()

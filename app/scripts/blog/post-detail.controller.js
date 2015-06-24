@@ -10,6 +10,7 @@
  * # PostDetailController
  * Controller of the anTestProjectApp
  */
+(function () {
 angular
   .module('anTestProjectApp')
   .controller('PostDetailController', PostDetailController);
@@ -40,3 +41,4 @@ function PostDetailController(postService, $routeParams){
   }
 
 }
+})();

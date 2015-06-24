@@ -11,7 +11,7 @@
  * Constant in the anTestProjectApp.
  */
 
-
+(function () {
 angular
   .module('anTestProjectApp')
   .directive('loginDialog', loginDialog);
@@ -33,3 +33,4 @@ function loginDialog(AUTH_EVENTS) {
     }
   };
 }
+})();

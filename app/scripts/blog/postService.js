@@ -10,6 +10,7 @@
  * # postService
  * Factory in the anTestProjectApp.
  */
+(function () {
 angular
   .module('anTestProjectApp')
   .factory('postService', postService);
@@ -55,3 +56,4 @@ function postService(Restangular)
     }
   }
 }
+})();

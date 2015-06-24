@@ -7,6 +7,7 @@
  * # PostsController
  * Controller of the anTestProjectApp
  */
+(function () {
 angular
   .module('anTestProjectApp')
   .controller('PostsController', PostsController);
@@ -45,21 +46,5 @@ function PostsController(postService) {
     };
   }
 
-/*  $http({
-    method: 'GET',
-    url: 'http://apitestyii2.localhost/v1/blog'
-  }).
-
-    success(function (data) {
-      $scope.loading = false;
-      $scope.awesomeThings = data;
-    }).
-
-    error(function (data, status) {
-      $scope.loading = false;
-      $scope.error = data && data.message ? data : createUnknownError(status);
-    });*/
-
-   //Restangular.all('blog').getList();
-
 }
+})();
